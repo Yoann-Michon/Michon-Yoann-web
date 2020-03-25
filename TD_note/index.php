@@ -11,14 +11,14 @@ $db->addConnection(parse_ini_file('src/conf/conf.ini'));
 $db->setAsGlobal();
 $db->bootEloquent();
 
-echo '<select name="client">'."\n";
+echo '<select name="tpas">'."\n";
 echo '<option value="value1">--Liste des clients--</option>'."\n";
 $ListClient = client::SELECT( 'nomcli')->get();
 
 while ( $row = FETCH_ARRAY( $ListClient)) {
 
     $nomClient = $row['nomcli'];
-    <option value="<?php echo $nomClient; ?>"><?php echo $nomClient; ?></option>;
+    echo '<option value="<?php echo $nomClient; ?>"><?php echo $nomClient; ?></option>';
 }
 echo "</select>\n";
 ?>
