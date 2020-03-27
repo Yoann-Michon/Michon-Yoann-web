@@ -11,7 +11,7 @@ $db->addConnection(parse_ini_file('src/conf/conf.ini'));
 $db->setAsGlobal();
 $db->bootEloquent();
 
-echo '<select name="tpas">'."\n";
+echo '<select name="client">'."\n";
 echo '<option value="value1">--Liste des clients--</option>'."\n";
 $ListClient = client::SELECT( 'nomcli')->get();
 
