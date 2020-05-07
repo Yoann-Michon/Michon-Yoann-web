@@ -26,7 +26,7 @@ let showme=(function(){
 /* initialise l'application*/
 export function start(){
     _init();
-    show.onclick=showme;
+    show.addEventListener("click",(event) => {showme});
 }
 
 

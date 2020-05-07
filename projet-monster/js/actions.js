@@ -1,24 +1,24 @@
 /*  description du monstre  */
-let monster={   name: "",
-                life: "",
-                money: "",
-                awake: Boolean(),
-                etat: ""};
+let name;
+let life;
+let money;
+let awake;
 
 /*  Export    */
 
 /*  retourne l'état courant du monstre  */
 export function _get(){
-    return monster;
+    return ("name : " + name + ",\nlife : " + life
+        + ",\nmoney : " + money + ",\nawake : " + awake);
 }
 
 /*  initialise l'état du monstre avec
  *  les valeurs reçues en paramètres    */
-export function _init(nom,vie,argent,reveiller){
-    monster.name = nom;
-    monster.life = vie;
-    monster.money = argent;
-    monster.awake = reveiller;
+export function _init(nom,vie,argent){
+    name = nom;
+    life = vie;
+    money = argent;
+    awake = true;
 }
 
 
