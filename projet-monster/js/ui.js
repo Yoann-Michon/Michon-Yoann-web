@@ -1,4 +1,5 @@
 let actionbox = document.getElementById('actionbox')
+let statusElements=document.getElementById('status').childNodes
 
 /*  permet d'afficher un message
  *  dans la boite #actionbox    */
@@ -9,6 +10,8 @@ export function log(message){
 }
 /*  permet d'afficher l'état
  *  du monstre reçu en paramètre dans la liste  */
-function displayStatus(life, money, awake){
-
+export function displayStatus(life, money, awake){
+    statusElements[0].innerHTML="Life : "+life;
+    statusElements[1].innerHTML="Money : "+money;
+    statusElements[2].innerHTML="Awake : "+awake;
 }

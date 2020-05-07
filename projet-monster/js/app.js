@@ -1,5 +1,5 @@
 import {_init,_get} from './actions.js';
-
+import {log,displayStatus} from "./ui.js";
 
 /*  handlers associés aux événements produits par les actions de
  *  l'utilisateur sur l'interface   */
@@ -26,7 +26,7 @@ let showme=(function(){
 /* initialise l'application*/
 export function start(){
     _init();
-    show.addEventListener("click",(event) => {showme});
+    show.onclick=showme;
 }
 
 
