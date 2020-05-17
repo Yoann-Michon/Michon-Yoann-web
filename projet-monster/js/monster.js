@@ -1,4 +1,4 @@
-import {start} from './app.js';
+import * as app from './app.js';
 
 /*   lance l'application   */
-window.onload=start;
+window.onload=app.start();

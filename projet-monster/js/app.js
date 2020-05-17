@@ -1,5 +1,6 @@
-import {_init,_get} from './actions.js';
-import {log,displayStatus} from "./ui.js";
+import * as actions from './actions.js';
+import * as ui from "./ui.js";
+
 
 /*  handlers associés aux événements produits par les actions de
  *  l'utilisateur sur l'interface   */
@@ -17,25 +18,25 @@ let work = document.querySelector('b7');
 /*  ce handler affiche l'état courant
  *  du monstre en utilisant une alerte.  */
 let showme=(function(){
-    alert(  "Nom : " + _get().name +
-        "\n Point de vie: " + _get().life +
-        "\n Monnaie: " + _get().money +
-        "\n etat: " + _get().awake );
+    alert(  "Nom : " + actions._get('name') +
+        "\n Point de vie: " + actions._get('life')+
+        "\n Monnaie: " + actions._get('money') +
+        "\n etat: " + actions._get('awake') );
 })
 
 /*  Export    */
 
 /* initialise l'application*/
 export function start(){
-    _init();
+    actions._init();
     show.onclick=showme;
-    run.onclick = run;
-    fight.onclick = fight;
-    sleep.onclick = sleep;
-    eat.onclick = eat;
-    work.onclick = work;
-    newLife.onclick = newLife;
-    kill.onclick = kill;
+    run.onclick = actions.run();
+    fight.onclick = actions.fight();
+    sleep.onclick = actions.sleep();
+    eat.onclick = actions.eat();
+    work.onclick = actions.work();
+    newLife.onclick = actions.newLife();
+    kill.onclick = actions.kill();
 }
 
 
